@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 50px;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+}
+
+.subtext {
+  margin: 0;
+  color: #4b5563;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0 16px;
+}
+
+input,
+select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+}
+
+input {
+  flex: 1;
+  min-width: 240px;
+}
+
+.status-message {
+  min-height: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.status-message.success {
+  color: #15803d;
+}
+
+.status-message.error {
+  color: #b91c1c;
+}
+
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.meal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.meal-card h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.description {
+  color: #4b5563;
+  min-height: 48px;
+}
+
+.details p {
+  margin: 6px 0;
+}
+
+button {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.request-btn {
+  background: #2563eb;
+}
+
+.request-btn:hover {
+  background: #1d4ed8;
+}
+
+.cancel-btn {
+  background: #dc2626;
+}
+
+.cancel-btn:hover {
+  background: #b91c1c;
+}
+
+.empty-state {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
