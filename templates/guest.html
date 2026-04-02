@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Share Guest Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">Meal Sharing App</p>
+      <h1>Browse Meals</h1>
+      <p class="subtext">Search meals, sort options, and request or cancel a spot.</p>
+    </header>
+
+    <section class="controls">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by meal, food type, or host"
+      />
+
+      <select id="sortSelect">
+        <option value="default">Sort By</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="time">Time</option>
+        <option value="spots">Most Spots Left</option>
+      </select>
+    </section>
+
+    <p id="statusMessage" class="status-message"></p>
+
+    <section id="mealList" class="meal-list"></section>
+  </main>
+
+  <script src="{{ url_for('static', filename='guest.js') }}"></script>
+</body>
+</html>
