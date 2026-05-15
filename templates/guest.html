@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meal Share Guest Page</title>
+  <title>MealShare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="{{ url_for('static', filename='MealShareLogo.png') }}" alt="MealShare" class="nav-logo" onerror="this.style.display='none'" />
+        <span class="nav-wordmark">MealShare</span>
+      </a>
+      <div class="nav-right">
+        <span class="nav-user" id="navUser"></span>
+        <button class="nav-plus-btn" id="openCreateModal" title="Create a meal">＋</button>
+        <button class="nav-logout-btn" id="logoutBtn">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
   <main class="container">
     <header class="hero">
-      <p class="eyebrow">Meal Sharing App</p>
       <h1>Browse Meals</h1>
       <p class="subtext">Search meals, sort options, and request or cancel a spot.</p>
     </header>
 
     <section class="controls">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by meal, food type, or host"
-      />
-
+      <input type="text" id="searchInput" placeholder="Search by meal, food type, or host" />
       <select id="sortSelect">
         <option value="default">Sort By</option>
         <option value="priceLow">Price: Low to High</option>
@@ -31,9 +44,54 @@
     </section>
 
     <p id="statusMessage" class="status-message"></p>
-
     <section id="mealList" class="meal-list"></section>
   </main>
+
+  <!-- CREATE MEAL MODAL -->
+  <div class="modal-overlay" id="createModalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Create a Meal</h2>
+        <button class="modal-close" id="closeCreateModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="field-group">
+          <label>Title</label>
+          <input type="text" id="cm-title" placeholder="e.g. Pasta Night" />
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Food Type</label>
+            <input type="text" id="cm-food-type" placeholder="e.g. Italian" />
+          </div>
+          <div class="field-group">
+            <label>Price ($)</label>
+            <input type="number" id="cm-price" placeholder="0.00" min="0" step="0.5" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Location</label>
+          <input type="text" id="cm-location" placeholder="Address or area" />
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Time</label>
+            <input type="text" id="cm-time" placeholder="e.g. 7:00 PM" />
+          </div>
+          <div class="field-group">
+            <label>Spots Available</label>
+            <input type="number" id="cm-spots" placeholder="4" min="1" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Description</label>
+          <textarea id="cm-description" rows="3" placeholder="Tell people what you're making…"></textarea>
+        </div>
+        <p id="createError" class="login-error"></p>
+        <button class="login-btn" id="submitCreateMeal">Post Meal</button>
+      </div>
+    </div>
+  </div>
 
   <script src="{{ url_for('static', filename='guest.js') }}"></script>
 </body>

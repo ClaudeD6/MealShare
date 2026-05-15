@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MealShare – Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="login-page">
+  <div class="login-wrap">
+    <div class="login-brand">
+      <img src="{{ url_for('static', filename='MealShareLogo2.png') }}" alt="MealShare" class="login-logo" onerror="this.style.display='none'" />
+      <span class="login-wordmark">MealShare</span>
+    </div>
+    <h1 class="login-title">Welcome back</h1>
+    <p class="login-sub">Sign in to browse and share meals.</p>
+
+    <p id="loginError" class="login-error"></p>
+
+    <div class="login-form">
+      <div class="field-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="your_username" autocomplete="username" />
+      </div>
+      <div class="field-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <button class="login-btn" id="loginBtn">Sign In</button>
+    </div>
+  </div>
+
+  <script>
+    async function doLogin() {
+      const btn = document.getElementById('loginBtn');
+      const err = document.getElementById('loginError');
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      err.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Signing in…';
+      try {
+        const res = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          window.location.href = '/';
+        } else {
+          err.textContent = data.message || 'Invalid credentials.';
+          btn.disabled = false;
+          btn.textContent = 'Sign In';
+        }
+      } catch {
+        err.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+      }
+    }
+
+    document.getElementById('loginBtn').addEventListener('click', doLogin);
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+id,title,host,food_type,location,time,price,spots,description,requested
+1,Italian Dinner,tammy_henderson,Pasta,24 Garden St,2026-05-08 19:00,8.00,4,"Homemade penne, garlic bread, and salad.",FALSE
+2,Taco Night,mia_harris,Mexican,9 Observer Hwy,2026-05-12 18:30,5.00,6,Chicken and beef tacos with chips and salsa.,FALSE
+3,Homemade Burgers,leo_brooks,American,1 Castle Point Ter,2026-05-07 20:00,6.70,2,"Burgers, fries, and drinks for a casual dinner.",FALSE
+4,Greek Night,carol_white,Mediterranean,88 Bloomfield St,2026-05-26 11:00,7.50,5,"Homemade gyros, tzatziki, pita bread, and Greek salad.",FALSE
+5,Sushi Spread,jack_anderson,Japanese,101 2nd St,2026-05-29 13:00,12.00,4,"Assorted rolls, miso soup, and edamame for a Japanese feast.",FALSE
+6,BBQ Cookout,frank_miller,American,67 Garden St,2026-05-13 12:30,9.00,8,"Grilled ribs, corn on the cob, coleslaw, and baked beans.",FALSE
+7,Veggie Stir Fry,iris_taylor,Asian,31 Adams St,2026-05-09 20:30,6.00,6,Fresh vegetables stir-fried with tofu and jasmine rice.,FALSE
+8,Pizza Party,alice_smith,Italian,12 Washington St,2026-06-03 19:00,5.50,7,Wood-fired style pizzas with a variety of toppings.,FALSE
+9,Curry Night,henry_moore,Indian,502 Jefferson St,2026-05-24 18:00,8.00,5,"Chicken tikka masala, basmati rice, naan, and mango chutney.",FALSE
+10,French Bistro,grace_wilson,French,19 Monroe St,2026-05-06 11:00,11.00,4,"Beef bourguignon, crusty baguette, and a light salad.",FALSE
+11,Breakfast for Dinner,kate_thomas,American,118 Clinton St,2026-05-13 19:30,5.00,6,"Pancakes, scrambled eggs, bacon, and fresh orange juice.",FALSE
+12,Ramen Bowl,bob_jones,Japanese,45 Hudson St,2026-05-06 19:00,7.00,5,"Homemade tonkotsu broth with noodles, soft-boiled egg, and toppings.",FALSE
+13,Tex-Mex Feast,emma_davis,Mexican,210 Park Ave,2026-05-28 20:30,6.50,8,"Enchiladas, refried beans, Spanish rice, and guacamole.",FALSE
+14,Roast Dinner,david_brown,British,3 Newark St,2026-05-23 18:00,10.00,4,"Sunday-style roast with roasted veggies, gravy, and Yorkshire pudding.",FALSE
